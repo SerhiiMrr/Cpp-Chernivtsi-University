@@ -1,0 +1,39 @@
+#include <iostream>
+#include <math.h>
+#include <conio.h>
+#include <stdlib.h>
+#include <time.h>
+
+using namespace std;
+
+int main()
+{
+    system("chcp 1251>null");
+    double sum=0,avrg=0, sumb=0;
+    int n;
+    do {
+    cout <<"Підказка: n не має перевищувати 200";
+    cout << "\nВведіть розмірність масиву дійсних чисел =>> ";
+    cin >>n;
+ }while (n>200);
+    int mas[n];
+    srand(time(NULL));
+    for (int i=0; i<n*2; i++){
+        mas[i]= rand()%200;
+        cout << "i= "<< mas[i]<< endl;
+        sum+=mas[i];
+    }
+        avrg =(sum/(n*2));
+        cout << "\nCереднє арифм =>> " << avrg;
+        for (int i=0; i<n; i++){
+            if(avrg<mas[i]){
+                sumb+=mas[i];
+            }
+    }
+    if (sumb==0){
+        cout << "\nЧисел більших від середнього арифметичного немає";
+    }
+    else cout << "\nCума чисел, більших за середнє арифметичне =>> " << sumb;
+    _getch();
+    return 0;
+}
