@@ -1,6 +1,6 @@
 # C-Chernivtsi-University
-C++/n
-All work is done, but only as the fourth option.
+C++
+# All work is done, but only as the fourth option.
 Всі роботи виконані четвертим варіантом.
 
 Lab №2 - Тема: Умовні оператори та оператор вибору.
