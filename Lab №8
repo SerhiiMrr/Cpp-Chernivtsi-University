@@ -1,0 +1,26 @@
+#include <iostream>
+#include <stdlib.h>
+
+using namespace std;
+
+char * del_char(const char * src, char * res, char c)
+{
+char *tmp = res;
+do
+if (*src != c)
+*res++ = *src;
+while (*src++);
+return tmp;
+}
+
+int main(int argc, char *argv[])
+{
+system("chcp 1251>null");
+cout<<"Введіть текс >> ";
+char str[256], buf[256];
+cin.getline(str,256);
+
+cout << del_char(str, buf, str[0]) << endl;
+
+return 0;
+}
