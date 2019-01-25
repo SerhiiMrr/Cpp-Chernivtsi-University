@@ -1,0 +1,39 @@
+#include <iostream>
+#include <math.h>
+#include <conio.h>
+#include <stdlib.h>
+using namespace std;
+
+int main()
+{
+    system("chcp 1251>null");
+    int x,y,z,a,b,c,d;
+    float V;
+    float B;// Для частини 2(оператор вибору)
+    cout << "Вкажіть a,b,c,d,x,y та z:";
+    cin >>a>>b>>c>>d>>x>>y>>z;
+    if (a>b)
+        swap(a,b);// Якщо а більше за б, то міняємо їх місцями
+    if (c>d){
+        swap(c,d);// Якщо с більше за д, то міняємо їх місцями
+        }
+    cout<<" a="<<a<<" b="<<b<<" c="<<c<<" d="<<d;//Bиводимо в консоль результат обміну
+    if (c<=x<=y<=z<=d) V=pow(x,2)+pow(y,2)+pow(z,2);
+    if (x<=y<=z<=c) V=sqrt(pow(x,2)+pow(y,2)+pow(z,2));
+    if (d<=x<=y<=z) V=abs(x)+abs(y)+abs(z);
+    else (a+b)/2;
+    cout << "\nРезультат = "<<V;// Виводимо результат виразу
+        // Частина друга
+        int k;
+        cout << "\nВкажіть k:";
+        cin >>k;
+        cout << "\nВкажіть x,y та z:";
+        cin >>x>>y>>z;
+        if (k=1) B=max(max(x,y),z)+k;//Вибираємо максимум між х і максимумом між y і z
+        if (k=2) B=max(pow(x,2),max(pow(y,2),pow(z,2)))+k;
+        if (30<=k<=32) B=min(x,min(y,z))+k;
+        else pow(k,2)+pow((pow(x,2)+pow(y,2)+pow(z,2)),2);
+        cout << "Результат = " << B;// Виводимо результат виразу
+        _getch();
+        return 0;
+        }
