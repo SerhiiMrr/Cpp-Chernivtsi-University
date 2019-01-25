@@ -1,0 +1,36 @@
+#include <iostream>
+#include <conio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <stdio.h>
+
+using namespace std;
+
+int main()
+{
+    int m,n;
+    do
+    {
+    cout << "Press size matrix: n ==> ";
+    cin >>n;
+    cout << "Press size matrix: m ==> ";
+    cin >>m;
+    }while(n>=300 && m>=25);
+    int p=n+m;
+    srand(time(NULL));
+    int *mas_n = new int[n];
+    int *mas_m = new int[m];
+    int *mas_rez = new int[p];
+    for (int i=0;i<n;i++){
+        for (int j=0;j<m;j++){
+              *p=new int[i][j]=rand()%10+1;
+    }}
+          delete [] mas_n;
+    delete [] mas_m;
+    delete [] mas_rez;
+
+
+    _getch();
+    return 0;
+
+}
