@@ -1,0 +1,77 @@
+#include <iostream>
+#include<windows.h>
+
+using namespace std;
+
+struct Air{
+    string namePynkt;
+    int numAir;
+    string timeArrive;
+};
+
+Air putAir(Air p){
+    cout<<"\n  Enter destination of the flight - ";
+    cin>>p.namePynkt;
+    cout<<"\n Enter flight number - ";
+    cin>>p.numAir;
+    cout<<"\n Enter arrival time - ";
+    cin>>p.timeArrive;
+
+    return p;
+}
+
+void outAir(Air p){
+    cout<<"\nNum: "<<p.numAir<<" Destination Route: "<<p.namePynkt<<" Arrive: "<<p.timeArrive;
+}
+
+void outAirList(Air p[],int  size){
+    for(int i=0;i<size;i++){
+        outAir(p[i]);
+    }
+}
+
+void swap(Air &x,Air &y)
+{
+    Air temp=x;
+    x=y;
+    y=temp;
+}
+
+void showInfoSort(Air p[],int  size){
+    cout<<"\n__________"<<"Full timetable Air"<<"__________";
+    for (int i=1;i<size;i++){
+        for (int j=0;j<size-1;j++){
+            if (p[i].numAir < p[j].numAir) swap(p[i],p[j]) ;
+        }
+    }
+    outAirList(p,size);
+
+}
+
+int main ()
+{
+    int size = 7;
+    string namePynkt2;
+    bool found = false;
+    Air AirList[size];
+    for(int i=0;i<size;i++){
+        AirList[i] = putAir(AirList[i]);
+    }
+    cout<<"\n Enter your destination - ";
+    cin>>namePynkt2;
+    for(int i=0;i<size;i++){
+        if(namePynkt2 == AirList[i].namePynkt){
+            outAir(AirList[i]);
+            found=true;
+        }
+    }
+    if(!found){
+        cout<<"\n Information about Air not found";
+    }
+
+    showInfoSort(AirList,size);
+
+    return 0;
+}
+
+
