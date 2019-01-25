@@ -1,7 +1,7 @@
 # C-Chernivtsi-University
 C++
-# All work is done, but only as the fourth option.
-Всі роботи виконані четвертим варіантом.
+All work is done, but only as the fourth option.&#10
+Всі роботи виконані четвертим варіантом.&#10
 
 # Lab №2 - Тема: Умовні оператори та оператор вибору.
 =======================Option №4============================
