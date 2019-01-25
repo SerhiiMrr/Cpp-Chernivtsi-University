@@ -1,5 +1,5 @@
 # C-Chernivtsi-University
-C++
+C++/n
 All work is done, but only as the fourth option.
 Всі роботи виконані четвертим варіантом.
 
