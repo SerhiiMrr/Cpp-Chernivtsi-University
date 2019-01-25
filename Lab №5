@@ -1,0 +1,89 @@
+#include <iostream>
+#include <math.h>
+#include <conio.h>
+#include <stdlib.h>
+#include <time.h>
+
+using namespace std;
+
+int main()
+{
+    system("chcp 1251>null");
+    int n,m;
+    do {
+    cout <<"[АНТИНЕРОЗУМНИЙ КОРИСТУВАЧ]Підказка:\n\t n повинно бути не більше 300\n\t m повинно бути не більше 200";
+    cout << "\n[АНТИНЕРОЗУМНИЙ КОРИСТУВАЧ] Введіть розмірність масиву n =>> ";
+    cin >>n;
+    cout << "\n[АНТИНЕРОЗУМНИЙ КОРИСТУВАЧ] Введіть розмірність масиву m =>> ";
+    cin >>m;
+ }while (n>300 && m>200);
+    int a[n];
+    int b[m];
+     srand(time(NULL));
+    for (int e=0; e<n; e++){
+        a[e] = rand()% 300;
+        for(int i=0;i<n-1;i++){
+            int min_i=i;
+            for(int j=i+1;j<n;j++){
+                if(a[j]<a[min_i]){
+                    min_i=j;
+                }
+            }
+            int temp =a[i];
+            a[i]=a[min_i];
+            a[min_i]=temp;
+        }
+        cout<<"n="<<a[e]<<endl;
+    }
+    for (int e=0; e<m; e++){
+        b[e]= rand()% 200;
+        for(int i=0;i<n-1;i++){
+            int min_i=i;
+            for(int j=i+1;j<n;j++){
+                if(b[j]<b[min_i]){
+                    min_i=j;
+                }
+            }
+            int temp =b[i];
+            b[i]=b[min_i];
+            b[min_i]=temp;
+        }
+        cout<<"\tm="<<a[e]<<endl;
+        }
+        int i,j,k,l=n+m;
+        int c[l];
+        i=n-1;j=m-1;k=-1;
+        while((i>=0)&&(j>=0))
+            if(a[i]>b[j])
+        {
+            k++;
+            c[k]=a[i];
+            i--;
+        }
+        else
+        {
+            k++;
+            c[k]=b[j];
+            j--;
+        }
+        if(i<0)
+        {
+            for(i=j;i>=0;i--)
+            {
+                k++;
+                c[k]=b[i];
+            }
+        }
+        else
+        {
+            for(j=i;j>=0;j--)
+            {
+                k++;
+                c[k]=a[j];
+            }
+        }
+    for(i=0;i<l;i++)
+    {
+        cout << "k="<< c[i] <<endl;
+    }
+}
